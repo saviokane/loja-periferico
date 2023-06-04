@@ -2,6 +2,9 @@ package projeto.loja.util;
  
 public interface Mensagem {
 	// TELA
+	final static String TELA_TECLADO = "[1] Teclados";
+	final static String TELA_HEADSET = "[2] Headsets";
+	final static String TELA_MOUSE = "[3] Mouses";
 	final static String TELA_PRINCIPAL = "==========TELA PRINCIPAL==========\n";
 	final static String TELA_PEDIDOS = "==========TELA PEDIDOS==========\n";
 	final static String TELA_CLIENTES = "==========TELA CLIENTES==========\n";
@@ -13,6 +16,7 @@ public interface Mensagem {
 	final static String LISTA_TECLADOS = "=========TECLADOS=========\\\n";
 	final static String LISTA_HEADSETS = "=========HEADSETS=========\\\n";
 	final static String LISTA_MOUSES = "=========MOUSES=========\\\n";
+	final static String SEPARADOR = "=========================";
 	// MENSAGENS
 	final static String MSG_ESCOLHA_PRODUTO = "Qual produto deseja cadastrar:";
 	final static String MSG_ESCOLHA = "Escolha uma opção:\n";
@@ -52,6 +56,11 @@ public interface Mensagem {
 	final static String CADASTRA_CPF ="Informe o CPF: ";
 	final static String CADASTRA_EMAIL = "Informe o Email: ";
 	final static String CADASTRA_TELEFONE = "Informe o Telefone: ";
+	final static String CADASTRA_MARCA = "Informe a marca: ";
+	final static String CADASTRA_SWITCHTYPE = "Informe qual o switch: ";
+	final static String CADASTRA_MODELO = "Informe o modelo: (Mecânico, Membrana";
+	final static String CADASTRA_LAYOUT = "Informe o layout: (ABNT, ABNT2)";
+	
 	// CONTROLER
 	final static String ADD_TECLADO = "\nCADASTRAR TECLADO\n";
 	final static String ADD_HEADSET = "\nCADASTRAR HEADSET\n";
