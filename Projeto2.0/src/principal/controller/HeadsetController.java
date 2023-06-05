@@ -5,36 +5,36 @@ import java.util.List;
 import java.util.Scanner;
 
 import principal.daos.DAO;
-import principal.model.Teclado;
+import principal.model.Headset;
 import principal.tela.TelaDeProdutos;
 import projeto.loja.util.Mensagem;
-import principal.daos.TecladoDAO;
+import principal.daos.HeadsetDAO;
 
-public class TecladoController {
+public class HeadsetController {
 
-	private static DAO<Teclado> dao = new TecladoDAO();
+	private static DAO<Headset> dao = new HeadsetDAO();
 	
-	public static void listar(){
-		System.out.println("Lista de Teclados cadastrados:");
-		List<Teclado> teclados = dao.listar();
+	public static void listar() {
+		System.out.println("Lista de Headsets cadastrados:");
+		List<Headset> headsets = dao.listar();
 		
-		for (Teclado teclado : teclados) {
+		for(Headset headset : headsets) {
 			System.out.println(Mensagem.SEPARADOR);
-			System.out.println("Marca: " + teclado.getMarca());
-			System.out.println("Nome: " + teclado.getNome());
-			System.out.println("Valor: " + teclado.getValor());
-			System.out.println("SwitchType: " + teclado.getSwitchType());
-			System.out.println("modelo: " + teclado.getModelo());
-			System.out.println("Layout: " + teclado.getLayout());
-			
+			System.out.println("Marca: "+ headset.getMarca());
+			System.out.println("Nome: "+ headset.getNome());
+			System.out.println("Valor: "+ headset.getValor());
+			System.out.println("Drivers: "+ headset.getDrivers());
+			System.out.println("Modelo: "+ headset.getModelo());
+			System.out.println("Conectores: "+ headset.getConectores());
 		}
+		
 		TelaDeProdutos.mostrar();
 	}
-
+	
 	public static void cadastrar() {
-		
 		Scanner leitor = new Scanner(System.in);
-		System.out.println(Mensagem.ADD_TECLADO);
+		
+		System.out.println(Mensagem.ADD_HEADSET);
 		System.out.println();
 		
 		System.out.println(Mensagem.CADASTRA_MARCA);
@@ -46,35 +46,32 @@ public class TecladoController {
 		System.out.println(Mensagem.VALOR_PRODUTO);
 		String valor = leitor.nextLine();
 		
-		System.out.println(Mensagem.CADASTRA_SWITCHTYPE);
-		String switchtype = leitor.nextLine();
+		System.out.println(Mensagem.CADASTRA_DRIVERS);
+		String drivers = leitor.nextLine();
 		
 		System.out.println(Mensagem.CADASTRA_MODELO);
 		String modelo = leitor.nextLine();
 		
-		System.out.println(Mensagem.CADASTRA_LAYOUT);
-		String layout = leitor.nextLine();
+		System.out.println(Mensagem.CADASTRA_CONECTORES);
+		String conectores = leitor.nextLine();
 		
-		Teclado teclado = new Teclado(marca, nome, valor, switchtype, modelo, layout);
+		Headset headset = new Headset(marca, nome, valor, drivers, modelo, conectores);
 		
-		dao.salvar(teclado);
-		System.out.println("Produto cadastrado!!");
+		dao.salvar(headset);
 		
 		TelaDeProdutos.mostrar();
 		leitor.close();
 	}
-
+	
 	public static void atualizar() {
-		
 		Scanner leitor = new Scanner(System.in);
 		
 		System.out.println("Selecione qual produto deseja alterar: ");
 		int id = leitor.nextInt();
-				
-		Teclado tecladoAtualizado = dao.buscarPorId(id);
+		
+		Headset headsetAtualizado = dao.buscarPorId(id);
 		System.out.println(Mensagem.SEPARADOR);
 		
-//		O programa esta pulando a linha de marca direto para nome, arrumar depois. O restante está atualizando normalmente
 		System.out.println(Mensagem.CADASTRA_MARCA);
 		String marca = leitor.nextLine();
 		
@@ -84,23 +81,23 @@ public class TecladoController {
 		System.out.println(Mensagem.VALOR_PRODUTO);
 		String valor = leitor.nextLine();
 		
-		System.out.println(Mensagem.CADASTRA_SWITCHTYPE);
-		String switchtype = leitor.nextLine();
+		System.out.println(Mensagem.CADASTRA_DRIVERS);
+		String drivers = leitor.nextLine();
 		
 		System.out.println(Mensagem.CADASTRA_MODELO);
 		String modelo = leitor.nextLine();
 		
-		System.out.println(Mensagem.CADASTRA_LAYOUT);
-		String layout = leitor.nextLine();
+		System.out.println(Mensagem.CADASTRA_CONECTORES);
+		String conectores = leitor.nextLine();
 		
-		tecladoAtualizado.setMarca(marca);
-		tecladoAtualizado.setNome(nome);
-		tecladoAtualizado.setValor(valor);
-		tecladoAtualizado.setSwitchType(switchtype);
-		tecladoAtualizado.setModelo(modelo);
-		tecladoAtualizado.setLayout(layout);
+		headsetAtualizado.setMarca(marca);
+		headsetAtualizado.setNome(nome);
+		headsetAtualizado.setValor(valor);
+		headsetAtualizado.setDrivers(drivers);
+		headsetAtualizado.setModelo(modelo);
+		headsetAtualizado.setConectores(conectores);
 		
-		dao.atualizar(tecladoAtualizado);
+		dao.atualizar(headsetAtualizado);
 		
 		TelaDeProdutos.mostrar();
 		
@@ -116,7 +113,7 @@ public class TecladoController {
 		dao.excluir(id);
 		
 		TelaDeProdutos.mostrar();
+		
 	}
 	
-
 }

@@ -60,6 +60,11 @@ public interface Mensagem {
 	final static String CADASTRA_SWITCHTYPE = "Informe qual o switch: ";
 	final static String CADASTRA_MODELO = "Informe o modelo: (Mecânico, Membrana";
 	final static String CADASTRA_LAYOUT = "Informe o layout: (ABNT, ABNT2)";
+	final static String CADASTRA_DRIVERS = "Informe os drivers: ";
+	final static String CADASTRA_CONECTORES = "Informe quais são os conectores do produto:";
+	final static String CADASTRA_DPI = "Informe o DPI maximo: ";
+	final static String CADASTRA_PESO = "Informe o peso: ";
+	final static String CADASTRA_TEMPORESPOSTA = "Infore o peso do produto";
 	
 	// CONTROLER
 	final static String ADD_TECLADO = "\nCADASTRAR TECLADO\n";

@@ -17,7 +17,7 @@ public class Teclado extends Produto {
 		
 	}
 	
-	public Teclado( String marca, String nome, String valor,String switchType, String modelo, String layout) {
+	public Teclado(String marca, String nome, String valor,String switchType, String modelo, String layout) {
 		super(marca,  nome,  valor);
 		this.switchType = switchType;
 		this.modelo = modelo;

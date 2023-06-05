@@ -21,8 +21,6 @@ public class Programa {
 
 //static EntityManagerFactory emf = Persistence.createEntityManagerFactory("ex_mysql");
 //static EntityManager em = emf.createEntityManager();
-
-
 //menu();
 
 //	}
