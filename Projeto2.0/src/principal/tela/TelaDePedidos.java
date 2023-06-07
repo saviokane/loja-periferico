@@ -16,7 +16,7 @@ public class TelaDePedidos {
 	
 	System.out.println(Mensagem.TELA_PEDIDOS);
 	System.out.println(Mensagem.MSG_ESCOLHA);
-	System.out.println("[1] "+"Realizar .");
+	System.out.println("[1] "+"Cadastrar ");
 	System.out.println("[2] "+"Listar ");
 	System.out.println("[3] "+"Excluir ");
 	System.out.println("[4] "+"Atualizar");
