@@ -21,7 +21,7 @@ public class TelaPrincipal{
 		leitor.nextLine();
 		switch(opcao) {
 		case 1:{
-//		ControlPedido.selecionar();
+			TelaDePedidos.mostrar();
 			break;
 		}
 		case 2:{
