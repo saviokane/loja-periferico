@@ -66,8 +66,9 @@ public class PedidoController {
 				System.out.println("modelo: " + teclado.getModelo());
 				System.out.println("Layout: " + teclado.getLayout());				
 			}
+	    	 
 	    	System.out.println();
-	    	 System.out.println("Digite o ID: ");
+	    	System.out.println("Digite o ID: ");
 	 	    selecionado = leitor.nextInt();
 	 	    System.out.println();
 	    	Teclado tecladoSelecionado = teclados.get(selecionado -1);
@@ -84,7 +85,7 @@ public class PedidoController {
 	    	
 	    	case 2:
 	    		TelaPrincipal.mostrar();
-	    	
+	    	// aqui vai ser os outros produtos
 	    	break;
 	    }
 	}
@@ -100,6 +101,52 @@ public class PedidoController {
 		System.out.println("Telefone: "+pedido.getTelefone());
 	}
 	TelaDePedidos.mostrar();
+	}
+	
+	public static void atualizar() {
+		PedidoController.listar();
+		Scanner leitor = new Scanner(System.in);
+		 
+		System.out.println("Informe o id a ser modificado: ");
+		Integer id = leitor.nextInt();
+		
+		Pedido pedidoAtualizado = pedidoDao.buscarPorId(id);
+		
+		// Atualização do pedido
+		System.out.println("Produto: ");
+		String produtoAtualizado = leitor.nextLine();
+		
+		System.out.println("Valor: ");
+		String valorAtualizado = leitor.nextLine();
+		
+		System.out.println("Cliente: ");
+		String cpfAtualizado = leitor.nextLine();
+		
+		System.out.println("Telefone: ");
+		String telefoneAtualizado = leitor.nextLine();
+		
+		pedidoAtualizado.setProduto(produtoAtualizado);
+		pedidoAtualizado.setValor(valorAtualizado);
+		pedidoAtualizado.setCpf(cpfAtualizado);
+		pedidoAtualizado.setTelefone(telefoneAtualizado);
+		
+		pedidoDao.atualizar(pedidoAtualizado);
+		
+		
+		TelaPrincipal.mostrar();
+		
+	
+		
+	}
+	
+	public static void excluir() {
+		Scanner leitor = new Scanner(System.in);
+		System.out.println("Informe o id a ser excluido: ");
+		int id = leitor.nextInt();
+		
+		pedidoDao.excluir(id);
+		
+		TelaDePedidos.mostrar();
 	}
 	
 }

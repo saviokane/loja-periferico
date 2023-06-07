@@ -8,11 +8,18 @@ public class Pedido {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
+
+	// para puxar todas as informações de pedido e 
+//	@OneToOne
+//	@JoinColumn(name = "id_produto")
+//	private Produto produtoz;
+	
 	private String produto;
 	private String valor;
 	private String nome;
 	private String cpf;
 	private String telefone;
+
 	
 	 public Pedido() {
 	        

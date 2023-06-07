@@ -19,7 +19,7 @@ public interface Mensagem {
 	final static String SEPARADOR = "=========================";
 	// MENSAGENS
 	final static String MSG_ESCOLHA_PRODUTO = "Qual produto deseja cadastrar:";
-	final static String MSG_ESCOLHA = "Escolha uma opção:\n";
+	final static String MSG_ESCOLHA = "Escolha uma opcao:\n";
 	final static String MSG_LISTAR = "Listar";
 	final static String MSG_CADASTRAR = "Cadastrar";
 	final static String MSG_EXCLUIR = "Excluir";

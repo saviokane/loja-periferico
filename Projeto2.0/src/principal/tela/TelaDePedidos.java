@@ -3,6 +3,7 @@ package principal.tela;
 import java.util.Scanner;
 
 import principal.controller.PedidoController;
+import principal.model.Pedido;
 import projeto.loja.util.Mensagem;
 
 public class TelaDePedidos {
@@ -15,9 +16,11 @@ public class TelaDePedidos {
 	
 	System.out.println(Mensagem.TELA_PEDIDOS);
 	System.out.println(Mensagem.MSG_ESCOLHA);
-	System.out.println("[1] "+"Realizar pedido.");
-	System.out.println("[2] "+"Listar pedidos");
-	System.out.println("[3] "+Mensagem.MSG_VOLTAR);
+	System.out.println("[1] "+"Realizar .");
+	System.out.println("[2] "+"Listar ");
+	System.out.println("[3] "+"Excluir ");
+	System.out.println("[4] "+"Atualizar");
+	System.out.println("[5] "+"Voltar");
 	int escolha = leitor.nextInt();
 	leitor.nextLine();
 
@@ -29,7 +32,13 @@ public class TelaDePedidos {
 		PedidoController.listar();
 		break;
 	case 3:
-		TelaPrincipal.mostrar();
+		PedidoController.excluir();
+		break;
+	case 4:
+		PedidoController.atualizar();
+		break;
+	case 5:
+		TelaDePedidos.mostrar();
 		break;
 	}
 	leitor.close();
