@@ -72,9 +72,9 @@ public class TecladoController {
 		int id = leitor.nextInt();
 				
 		Teclado tecladoAtualizado = dao.buscarPorId(id);
-		System.out.println(Mensagem.SEPARADOR);
 		
-//		O programa esta pulando a linha de marca direto para nome, arrumar depois. O restante está atualizando normalmente
+		leitor.nextLine();
+		System.out.println(Mensagem.SEPARADOR);
 		System.out.println(Mensagem.CADASTRA_MARCA);
 		String marca = leitor.nextLine();
 		

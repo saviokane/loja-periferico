@@ -104,13 +104,14 @@ public class PedidoController {
 	}
 	
 	public static void atualizar() {
-		PedidoController.listar();
+
 		Scanner leitor = new Scanner(System.in);
 		 
 		System.out.println("Informe o id a ser modificado: ");
 		Integer id = leitor.nextInt();
-		
+		leitor.nextLine();
 		Pedido pedidoAtualizado = pedidoDao.buscarPorId(id);
+		
 		
 		// Atualização do pedido
 		System.out.println("Produto: ");
@@ -120,12 +121,16 @@ public class PedidoController {
 		String valorAtualizado = leitor.nextLine();
 		
 		System.out.println("Cliente: ");
+		String nomeAtualizado = leitor.nextLine();
+		
+		System.out.println("CPF:: ");
 		String cpfAtualizado = leitor.nextLine();
 		
 		System.out.println("Telefone: ");
 		String telefoneAtualizado = leitor.nextLine();
 		
 		pedidoAtualizado.setProduto(produtoAtualizado);
+		pedidoAtualizado.setNome(nomeAtualizado);
 		pedidoAtualizado.setValor(valorAtualizado);
 		pedidoAtualizado.setCpf(cpfAtualizado);
 		pedidoAtualizado.setTelefone(telefoneAtualizado);
