@@ -99,6 +99,7 @@ public class PedidoController {
 		System.out.println("CPF: "+pedido.getCpf());
 		System.out.println("Telefone: "+pedido.getTelefone());
 	}
+	TelaDePedidos.mostrar();
 	}
 	
 }
