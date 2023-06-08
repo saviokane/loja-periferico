@@ -38,10 +38,9 @@ public class PedidoController {
 	    
 	    Pessoa clienteSelecionado = pessoas.get(selecionado -1);
 	    System.out.println("Pessoa Selecionado: "+clienteSelecionado.getNome());
-	    String nomeSelecionado = pessoas.get(selecionado -1).getNome();
-	    String cpfSelecionado = pessoas.get(selecionado -1).getCpf();
-	    String telefoneSelecionado = pessoas.get(selecionado -1).getTelefone();
+	 
 	    System.out.println();
+	    
 	    System.out.println("Selecione o tipo de produto: ");
 	    System.out.println("[1] - Teclado");
 	    System.out.println("[2] - Mouse");
@@ -74,12 +73,11 @@ public class PedidoController {
 	    	Teclado tecladoSelecionado = teclados.get(selecionado -1);
 	    	System.out.println("Teclado Selecionado: "+ tecladoSelecionado.getNome());
 	    	
-	    	String produtoSelecionado = tecladoSelecionado.getNome();
-	    	String valorSelecionado = tecladoSelecionado.getValor();
-	    	Pedido pedido = new Pedido(produtoSelecionado,valorSelecionado,nomeSelecionado,cpfSelecionado,telefoneSelecionado);
-	    	pedidoDao.salvar(pedido);
-	    	TelaDePedidos.mostrar();
+	    	Pedido novoPedido = new Pedido(tecladoSelecionado,clienteSelecionado);
+	    	pedidoDao.salvar(novoPedido);
 	    	
+	    	System.out.println("PEDIDO NOVO REALIZADO: "+novoPedido.getPessoa().getNome()+"\nProduto: "+novoPedido.getTeclado().getNome());
+	    	leitor.close();
 	    	
 	    	break;
 	    	
@@ -94,11 +92,11 @@ public class PedidoController {
 		List<Pedido> pedidos = pedidoDao.listar();
 	for(Pedido pedido : pedidos) {
 		System.out.println(Mensagem.SEPARADOR);
-		System.out.println("Produto: "+pedido.getProduto());
-		System.out.println("Valor R$"+pedido.getValor());
-		System.out.println("Cliente: "+pedido.getNome());
-		System.out.println("CPF: "+pedido.getCpf());
-		System.out.println("Telefone: "+pedido.getTelefone());
+		System.out.println("Produto: "+pedido.getTeclado().getNome());
+		System.out.println("Valor R$"+pedido.getTeclado().getValor());
+		System.out.println("Cliente: "+pedido.getPessoa().getNome());
+		System.out.println("CPF: "+pedido.getPessoa().getNome());
+		System.out.println("Telefone: "+pedido.getPessoa().getTelefone());
 	}
 	TelaDePedidos.mostrar();
 	}
