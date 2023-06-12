@@ -15,9 +15,9 @@ public class HeadsetController {
 	private static DAO<Headset> dao = new HeadsetDAO();
 	
 	public static void listar() {
-		System.out.println("Lista de Headsets cadastrados:");
 		List<Headset> headsets = dao.listar();
-		
+		System.out.println("\nLista de Headsets cadastrados:\n");
+
 		for(Headset headset : headsets) {
 			System.out.println(Mensagem.SEPARADOR);
 			System.out.println("Marca: "+ headset.getMarca());
@@ -117,3 +117,4 @@ public class HeadsetController {
 	}
 	
 }
+//Colocar as listas para selecionar quando for atualizar e tbm arrumar as mensagens !

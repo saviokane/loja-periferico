@@ -15,9 +15,9 @@ public class MouseController {
 	private static DAO<Mouse> dao = new MouseDAO();
 	
 	public static void listar() {
-		System.out.println("Lista de Mouses cadastrados: ");
+
 		List<Mouse> mouses = dao.listar();
-		
+		System.out.println("\nLista de Mouses cadastrados:\n");
 		for(Mouse mouse : mouses) {
 			System.out.println(Mensagem.SEPARADOR);
 			System.out.println("Marca: "+ mouse.getMarca());
@@ -73,7 +73,7 @@ public class MouseController {
 		
 		System.out.println("Selecione qual produto deseja alterar: ");
 		int id = leitor.nextInt();
-		
+		leitor.nextLine();
 		Mouse mouseAtualizado = dao.buscarPorId(id);
 		System.out.println(Mensagem.SEPARADOR);
 		
@@ -121,3 +121,6 @@ public class MouseController {
 	}
 	
 }
+
+
+//Colocar as listas para selecionar quando for atualizar e tbm arrumar as mensagens !

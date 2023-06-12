@@ -5,7 +5,6 @@ import java.util.Scanner;
 
 import jakarta.persistence.*;
 import principal.controller.ClienteController;
-import principal.model.Pessoa;
 import principal.tela.TelaPrincipal;
 
 public class Programa {

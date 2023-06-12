@@ -10,6 +10,7 @@ public interface DAO<T> {
 	T buscarPorId(Integer id);
 	List<T> listar();
 	void excluir(Integer id);
+	List<Integer> obterTodosIds();
 
 
 }

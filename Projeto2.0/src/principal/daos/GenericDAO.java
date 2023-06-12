@@ -8,6 +8,9 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import jakarta.persistence.*;
+import jakarta.persistence.criteria.CriteriaBuilder;
+import jakarta.persistence.criteria.CriteriaQuery;
+import jakarta.persistence.criteria.Root;
 
 
 public abstract class GenericDAO<T> implements DAO<T> {
@@ -60,4 +63,12 @@ public abstract class GenericDAO<T> implements DAO<T> {
 		t.commit();
 		return entidade;
 	}
+	public List<Integer> obterTodosIds() {
+	    CriteriaBuilder cb = entityManager.getCriteriaBuilder();
+	    CriteriaQuery<Integer> cq = cb.createQuery(Integer.class);
+	    Root<T> root = cq.from(persistedClass);
+	    cq.select(root.get("id"));
+	    return entityManager.createQuery(cq).getResultList();
+	}
+
 }

@@ -38,7 +38,7 @@ public class TelaDePedidos {
 		PedidoController.atualizar();
 		break;
 	case 5:
-		TelaDePedidos.mostrar();
+		TelaPrincipal.mostrar();
 		break;
 	}
 	leitor.close();

@@ -1,6 +1,5 @@
 package principal.controller;
 
-import java.nio.file.spi.FileSystemProvider;
 import java.util.List;
 import java.util.Scanner;
 
@@ -15,9 +14,9 @@ public class TecladoController {
 	private static DAO<Teclado> dao = new TecladoDAO();
 	
 	public static void listar(){
-		System.out.println("Lista de Teclados cadastrados:");
+
 		List<Teclado> teclados = dao.listar();
-		
+		System.out.println("\nLista de Teclados cadastrados:\n");
 		for (Teclado teclado : teclados) {
 			System.out.println(Mensagem.SEPARADOR);
 			System.out.println("Marca: " + teclado.getMarca());
@@ -120,3 +119,4 @@ public class TecladoController {
 	
 
 }
+//Colocar as listas para selecionar quando for atualizar e tbm arrumar as mensagens !

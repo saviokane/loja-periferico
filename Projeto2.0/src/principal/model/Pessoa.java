@@ -3,7 +3,7 @@ package principal.model;
 import jakarta.persistence.*;
 
 @Entity
-public class Pessoa {
+public class Pessoa{
 		
 		@Id
 		@GeneratedValue(strategy = GenerationType.IDENTITY)
