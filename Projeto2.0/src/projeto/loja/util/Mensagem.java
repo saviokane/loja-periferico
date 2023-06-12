@@ -58,13 +58,14 @@ public interface Mensagem {
 	final static String CADASTRA_TELEFONE = "Informe o Telefone: ";
 	final static String CADASTRA_MARCA = "Informe a marca: ";
 	final static String CADASTRA_SWITCHTYPE = "Informe qual o switch: ";
-	final static String CADASTRA_MODELO = "Informe o modelo: (Mecânico, Membrana";
+	final static String CADASTRA_MODELO = "Informe o modelo: (Mecânico, Membrana)";
+	final static String CADASTRA_MODELOFONE = "Informe o modelo: (7.1, Estereo)";
 	final static String CADASTRA_LAYOUT = "Informe o layout: (ABNT, ABNT2)";
 	final static String CADASTRA_DRIVERS = "Informe os drivers: ";
 	final static String CADASTRA_CONECTORES = "Informe quais são os conectores do produto:";
 	final static String CADASTRA_DPI = "Informe o DPI maximo: ";
 	final static String CADASTRA_PESO = "Informe o peso: ";
-	final static String CADASTRA_TEMPORESPOSTA = "Infore o peso do produto";
+	final static String CADASTRA_TEMPORESPOSTA = "Informe o Tempo de resposta do produto:";
 	
 	// CONTROLER
 	final static String ADD_TECLADO = "\nCADASTRAR TECLADO\n";

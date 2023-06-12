@@ -65,6 +65,24 @@ public class TecladoController {
 
 	public static void atualizar() {
 		
+		List<Teclado> teclados = dao.listar();
+	   	List<Integer> ids = dao.obterTodosIds();
+	   	int selecionado = 0;
+	   	for (int i = 0 ; i < teclados.size(); i++) {
+   		Teclado teclado = teclados.get(i);
+   		int tecladoId = ids.get(i);
+	    	
+			System.out.println(Mensagem.SEPARADOR);
+			System.out.println("ID: "+tecladoId);
+			System.out.println("Marca: " + teclado.getMarca());
+			System.out.println("Nome: " + teclado.getNome());
+			System.out.println("Valor: " + teclado.getValor());
+			System.out.println("SwitchType: " + teclado.getSwitchType());
+			System.out.println("modelo: " + teclado.getModelo());
+			System.out.println("Layout: " + teclado.getLayout());
+			System.out.println(Mensagem.SEPARADOR);
+		}
+		
 		Scanner leitor = new Scanner(System.in);
 		
 		System.out.println("Selecione qual produto deseja alterar: ");
@@ -106,6 +124,25 @@ public class TecladoController {
 	}
 	
 	public static void excluir() {
+		
+		List<Teclado> teclados = dao.listar();
+	   	List<Integer> ids = dao.obterTodosIds();
+	   	int selecionado = 0;
+	   	for (int i = 0 ; i < teclados.size(); i++) {
+   		Teclado teclado = teclados.get(i);
+   		int tecladoId = ids.get(i);
+	    	
+			System.out.println(Mensagem.SEPARADOR);
+			System.out.println("ID: "+tecladoId);
+			System.out.println("Marca: " + teclado.getMarca());
+			System.out.println("Nome: " + teclado.getNome());
+			System.out.println("Valor: " + teclado.getValor());
+			System.out.println("SwitchType: " + teclado.getSwitchType());
+			System.out.println("modelo: " + teclado.getModelo());
+			System.out.println("Layout: " + teclado.getLayout());
+			System.out.println(Mensagem.SEPARADOR);
+		}
+		
 		Scanner leitor = new Scanner(System.in);
 		
 		System.out.println("Selecione qual produto deseja remover: ");

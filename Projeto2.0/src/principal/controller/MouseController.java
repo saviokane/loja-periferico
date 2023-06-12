@@ -69,6 +69,23 @@ public class MouseController {
 	
 	public static void atualizar() {
 		
+		List<Mouse> mouses = dao.listar();
+   	 	List<Integer> idsmouse = dao.obterTodosIds();
+   	 	for (int i = 0 ; i < mouses.size(); i++) {
+   		Mouse mouse = mouses.get(i);
+   		int mouseid = idsmouse.get(i);
+	    	
+		System.out.println(Mensagem.SEPARADOR);
+		System.out.println("ID: "+mouseid);
+		System.out.println("Marca: " + mouse.getMarca());
+		System.out.println("Nome: " + mouse.getNome());
+		System.out.println("Valor: " + mouse.getValor());
+		System.out.println("DPI: " + mouse.getDpi());
+		System.out.println("Peso: " + mouse.getPeso());
+		System.out.println("Tempo Resposta: " + mouse.getTempoResposta());
+		System.out.println(Mensagem.SEPARADOR);
+	}
+		
 		Scanner leitor = new Scanner(System.in);
 		
 		System.out.println("Selecione qual produto deseja alterar: ");
@@ -108,6 +125,23 @@ public class MouseController {
 	}
 	
 	public static void excluir() {
+		List<Mouse> mouses = dao.listar();
+   	 	List<Integer> idsmouse = dao.obterTodosIds();
+   	 	for (int i = 0 ; i < mouses.size(); i++) {
+   		Mouse mouse = mouses.get(i);
+   		int mouseid = idsmouse.get(i);
+	    	
+			System.out.println(Mensagem.SEPARADOR);
+			System.out.println("ID: "+mouseid);
+			System.out.println("Marca: " + mouse.getMarca());
+			System.out.println("Nome: " + mouse.getNome());
+			System.out.println("Valor: " + mouse.getValor());
+			System.out.println("SwitchType: " + mouse.getDpi());
+			System.out.println("modelo: " + mouse.getPeso());
+			System.out.println("Layout: " + mouse.getTempoResposta());	
+			System.out.println(Mensagem.SEPARADOR);
+		}
+		
 		Scanner leitor = new Scanner(System.in);
 		
 		System.out.println("Selecione qual produto deseja remover: ");

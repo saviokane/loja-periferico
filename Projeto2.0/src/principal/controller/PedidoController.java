@@ -124,9 +124,9 @@ public class PedidoController {
 				System.out.println("Marca: " + mouse.getMarca());
 				System.out.println("Nome: " + mouse.getNome());
 				System.out.println("Valor: " + mouse.getValor());
-				System.out.println("SwitchType: " + mouse.getDpi());
-				System.out.println("modelo: " + mouse.getPeso());
-				System.out.println("Layout: " + mouse.getTempoResposta());				
+				System.out.println("DPI: " + mouse.getDpi());
+				System.out.println("Peso: " + mouse.getPeso());
+				System.out.println("Tempo Resposta: " + mouse.getTempoResposta());				
 			}
 	    	 
 	    	System.out.println();

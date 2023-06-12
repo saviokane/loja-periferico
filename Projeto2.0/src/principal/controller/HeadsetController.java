@@ -64,6 +64,24 @@ public class HeadsetController {
 	}
 	
 	public static void atualizar() {
+		
+		List<Headset> headsets = dao.listar();
+	   	List<Integer> idshed = dao.obterTodosIds();
+	   	for (int i = 0 ; i < headsets.size(); i++) {
+   		Headset headset = headsets.get(i);
+   		int heasetId = idshed.get(i);
+	    	
+			System.out.println(Mensagem.SEPARADOR);
+			System.out.println("ID: "+heasetId);
+			System.out.println("Marca: " + headset.getMarca());
+			System.out.println("Nome: " + headset.getNome());
+			System.out.println("Valor: " + headset.getValor());
+			System.out.println("Drivers: " + headset.getConectores());
+			System.out.println("Modelo: " + headset.getModelo());
+			System.out.println("Conectores: " + headset.getDrivers());
+			System.out.println(Mensagem.SEPARADOR);
+		}
+	   	
 		Scanner leitor = new Scanner(System.in);
 		
 		System.out.println("Selecione qual produto deseja alterar: ");
@@ -104,6 +122,24 @@ public class HeadsetController {
 	}
 	
 	public static void excluir() {
+		
+		List<Headset> headsets = dao.listar();
+	   	List<Integer> idshed = dao.obterTodosIds();
+	   	for (int i = 0 ; i < headsets.size(); i++) {
+   		Headset headset = headsets.get(i);
+   		int heasetId = idshed.get(i);
+	    	
+			System.out.println(Mensagem.SEPARADOR);
+			System.out.println("ID: "+heasetId);
+			System.out.println("Marca: " + headset.getMarca());
+			System.out.println("Nome: " + headset.getNome());
+			System.out.println("Valor: " + headset.getValor());
+			System.out.println("Drivers: " + headset.getConectores());
+			System.out.println("Modelo: " + headset.getModelo());
+			System.out.println("Conectores: " + headset.getDrivers());
+			System.out.println(Mensagem.SEPARADOR);
+		}
+		
 		Scanner leitor = new Scanner(System.in);
 		
 		System.out.println("Selecione qual produto deseja remover: ");
