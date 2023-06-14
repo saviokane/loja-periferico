@@ -30,7 +30,7 @@ public class PedidoController {
 	    if (pessoas.isEmpty()) {
 	        System.out.println("Ainda não há clientes cadastrados!\n");
 	    } else {
-	        System.out.println("Lista de Clientes:");
+	        System.out.println("\n===Lista de Clientes===");
 	        for (int i = 0; i < pessoas.size(); i++) {
 	            Pessoa pessoa = pessoas.get(i);
 	            int clienteId = idsP.get(i);
@@ -193,16 +193,22 @@ public class PedidoController {
 	
 	public static void listar() {
 		List<Pedido> pedidos = pedidoDao.listar();
+		if(pedidos.size() == 0) {
+			System.out.println("\n===Não há pedidos realizados");
+		}else {
+			System.out.println("\n===Pedidos===");
 	for(Pedido pedido : pedidos) {
+		
 		System.out.println(Mensagem.SEPARADOR);
 		System.out.println("Produto: "+pedido.getProduto());
 		System.out.println("Valor R$"+pedido.getValor());
 		System.out.println("Cliente: "+pedido.getNome());
 		System.out.println("CPF: "+pedido.getCpf());
 		System.out.println("Telefone: "+pedido.getTelefone());
-	}
-	TelaDePedidos.mostrar();
-	}
+			}
+		}
+		TelaDePedidos.mostrar();
+}
 	
 	public static void atualizar() {
 
@@ -211,6 +217,8 @@ public class PedidoController {
 		
 		List<Pedido> pedidos = pedidoDao.listar();
 		List<Integer> idsPe = pedidoDao.obterTodosIds(); 
+		
+		System.out.println("\n==Atualizar Pedido==\n");
 		    	 
 		for(int i = 0; i < pedidos.size(); i++) {
 			Pedido  pedido = pedidos.get(i);
@@ -225,11 +233,11 @@ public class PedidoController {
 		}
 		
 		
-		System.out.println("Informe o id a ser modificado: ");
+		System.out.println("\nInforme o id a ser modificado: ");
 		Integer id = leitor.nextInt();
 		leitor.nextLine();
-		Pedido pedidoAtualizado = pedidoDao.buscarPorId(id);
 		
+			Pedido pedidoAtualizado = pedidoDao.buscarPorId(id);
 			List<Pessoa> pessoas = pessoaDao.listar();
 		    List<Integer> idsP = pessoaDao.obterTodosIds();
 		    
@@ -238,7 +246,7 @@ public class PedidoController {
 		    if (pessoas.isEmpty()) {
 		        System.out.println("Ainda não há clientes cadastrados!\n");
 		    } else {
-		        System.out.println("Lista de Clientes:");
+		        System.out.println("\n===Lista de Clientes===");
 		        for (int i = 0; i < pessoas.size(); i++) {
 		            Pessoa pessoa = pessoas.get(i);
 		            int clienteId = idsP.get(i);
@@ -252,7 +260,7 @@ public class PedidoController {
 		        }
 
 		    }
-		        System.out.println("Digite o ID do cliente que fez o pedido:");
+		        System.out.println("\nDigite o ID do cliente que fez o pedido:");
 		        id = leitor.nextInt();
 		        Pessoa pessoaAtualizada = pessoaDao.buscarPorId(id);
 				
@@ -312,7 +320,7 @@ public class PedidoController {
 				pedidoDao.atualizar(pedidoAtualizado);
 				
 				
-				TelaPrincipal.mostrar();
+				listar();
 		  
 		            System.out.println("\n====Pedido cadastrado com sucesso===\n");
 		       
