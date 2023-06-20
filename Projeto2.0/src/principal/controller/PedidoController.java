@@ -73,10 +73,9 @@ public class PedidoController {
 	    	Teclado tecladoSelecionado = teclados.get(selecionado -1);
 	    	System.out.println("Teclado Selecionado: "+ tecladoSelecionado.getNome());
 	    	
-	    	Pedido novoPedido = new Pedido(tecladoSelecionado,clienteSelecionado);
-	    	pedidoDao.salvar(novoPedido);
-	    	
-	    	System.out.println("PEDIDO NOVO REALIZADO: "+novoPedido.getPessoa().getNome()+"\nProduto: "+novoPedido.getTeclado().getNome());
+	    	Pedido pedidoRealizado = new Pedido(clienteSelecionado,tecladoSelecionado);
+	    	pedidoDao.salvar(pedidoRealizado);
+	    	System.out.println("Espero q tenha realizado o cadastro !!!");
 	    	leitor.close();
 	    	
 	    	break;
